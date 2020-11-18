@@ -1,0 +1,11 @@
+A biblioteca utilizada para realizar os a conexão com o Banco de Dados e os comandos SQLs é a PyMySQL
+
+=>Instalação da Biblioteca:
+--->abrir o cmd e executar o comando:
+	pip3 install PyMySQL
+
+=>Usando a Biblioteca no arquivo '.py'
+--->colocar o comando de importação
+	import pymysql
+
+agora é só utilizar os comandos ;)

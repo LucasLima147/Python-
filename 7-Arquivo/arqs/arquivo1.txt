@@ -1,0 +1,2 @@
+testando gravacao de arquivos em Python
+acressentando conteúdo

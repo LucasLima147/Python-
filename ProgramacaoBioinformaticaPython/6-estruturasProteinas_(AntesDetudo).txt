@@ -1,0 +1,11 @@
+Antes de testar, deve-se primeiro baixar o arquivo .pdb
+->isso pode ser feito no site
+	-> https://www.rcsb.org
+->lá, procure por 1bga(usado como exemplo, ou outro da mesma extenção
+
+
+************* IMPORTANTE!!! *************
+
+É necessário ter o Numpy instalado no seu PC
+->caso queira confirma se o package está instalado, use o comando:
+	python -m pip install --user numpy

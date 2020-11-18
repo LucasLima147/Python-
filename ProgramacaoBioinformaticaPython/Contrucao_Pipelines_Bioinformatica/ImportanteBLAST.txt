@@ -1,0 +1,19 @@
+*********** BLAST *****************
+
+Realizar alinhamentos de sequência, usaremos o BLAST, que é uma ferramenta da NCBI. Contudo, existem 4 tipos diferentes de versões do BLAST, sendo elas:
+
+//Alinhar sequências entre nucleotídeos
+->blasn
+
+//Tradução de nucleotídeo para proteínas
+blastx
+
+//Alinhamento entre proteínas
+blastp
+
+//tradução de proteina para nuclotídeo
+tblastn
+
+
+->pode-se fazer o download no site para o seu sistema operacional.
+--> https://blast.ncbi.nlm.nih.gov/Blast.cgi

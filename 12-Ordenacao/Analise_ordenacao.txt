@@ -1,0 +1,25 @@
+
+ buscando a Eficiencia de uma solução, atravéz do tempo
+ também conhecido como complexidade temporal => tempo necissitado para o processamento
+ Casos:
+    Pior caso -> Big O (big ó na forma de ler)
+    Melhor caso -> simbolo do Ômega
+    Caso Médio -> simbolo do Theta
+
+ Comportamento Assintótico
+    Comportamento com grande volumos de dados
+
+ Avaliação de algorítimo
+    Empírica
+        Analisa o desempenho do algoritmo considerando tudo (pc, linguagem, etc)
+
+    Teórica
+        Formação matématica pelo tamanho de entrada
+        n², sendo n tamanho da entrada
+    
+    Cota Superior e Inferior de um problema 'P'
+        Superior => menor complexidade
+        Inferior => inerente
+        *  Ótimo =:> igualar a Superior e a Inferior
+=============================================================
+ 

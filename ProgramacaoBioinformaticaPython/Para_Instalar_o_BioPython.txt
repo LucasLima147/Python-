@@ -1,0 +1,23 @@
+********** WINDOWS **********
+abrir o Propt de Comando e digitar:
+->pip install biopyhton
+
+caso já tenha mas precise atualizar, utilizar o comando:
+->pip install biopython --upgrade
+
+======================================================================
+
+********** LINUX **********
+Para Linux é necessário fazer o download do arquivo compactado, extrair os dados e executar as seguintes linhas de comando no terminal:
+>link de downloa:
+http://biopython.org/wiki/Download
+
+Comandos do prompt
+->python setup.py build
+->python setup.py test
+->sudo python setup.py install
+
+======================================================================
+
+Se quiser conferir outras formas, acessar o link:
+http://biopython.org/DIST/docs/install/Installation.pdf
