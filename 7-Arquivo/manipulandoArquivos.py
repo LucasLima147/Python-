@@ -12,7 +12,7 @@ arq3 = open("arqs/arquivo1.txt", "a")						# abrindo o arquivo como append (Acre
 arq3.write("\nacressentando conteúdo")  					# acrescentando conteúdo ao arquivo
 arq3.close()                                                 
 
-arq4 = open("arqs/teste.txt", "r")                          # lendo o arquivo novo
+arq4 = open("arqs/teste.txt", "r")                          # abrindo o arquivo novo
 print(arq4.read())                                          # lendo o arquivo todo
 arq4.seek(0)                                                # voltando ao início do arquivo
 rows = arq4.readlines()                                     # salvando as linhas do arquivo comos lista
@@ -37,3 +37,4 @@ f.close()                                                   # fechando o arquivo
 with open('arqs/cientista.txt', 'r') as arquivo:            # with faz o .close() automáticamente
         conteudo = arquivo.read()
 print(conteudo)
+

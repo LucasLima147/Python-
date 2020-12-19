@@ -10,8 +10,10 @@ OBS: fazer a importação da biblioteca PrettyTable
 '''
 
 # Módulos
+
+
 def criar_vetor():
-    tam_vetor = 500000
+    tam_vetor = 100000
     vetor = [0] * tam_vetor
     cont = 0
     while cont < tam_vetor:
@@ -27,6 +29,8 @@ def listar_vetor_primeiros(vetor):
     while cont < 20:
         print(vetor[cont], end=" ")
         cont += 1
+    print()
+
 
 def listar_vetor_ultimos(vetor):
     print("Os 20 últimos números do vetor são: ")
@@ -34,6 +38,7 @@ def listar_vetor_ultimos(vetor):
     while cont < len(vetor):
         print(vetor[cont], end=" ")
         cont += 1
+    print("\n\n")
 
 
 def relatorio_desempenho(rodadas):
@@ -46,7 +51,8 @@ def relatorio_desempenho(rodadas):
     tt_rodadas = 0
     # gerando a primeira tabela com cada resultado
     print("Relação dos Testes\n")
-    tabela = PrettyTable(["Amostras", "Selection Sort(s)", "Inserction Sort(s)", "Shell Sort(s)", "Bubble Sort(s)", "Quick Sort(s)"])
+    tabela = PrettyTable(["Amostras", "Selection Sort(s)", "Inserction Sort(s)",
+                          "Shell Sort(s)", "Bubble Sort(s)", "Quick Sort(s)"])
     for rodada in rodadas:
         tp_selection += rodada[1]
         tp_inserction += rodada[2]
@@ -73,22 +79,21 @@ def relatorio_desempenho(rodadas):
     tabela.add_row(["Quick Sort", tp_quick])
     print(tabela)
 
+
 def selection_sort(vetor):
     inicio = time.time()
-    cont = 1
-    while cont < len(vetor):
-        for i in range(len(vetor)):
-            menor = i
-            for j in range(i+1, len(vetor)):
-                if vetor[j] < vetor[menor]:
-                    menor = j
+    for i in range(len(vetor)-2):
+        menor = i
+        for j in range(i+1, len(vetor)-1):
+            if vetor[j] < vetor[menor]:
+                menor = j
 
-            aux = vetor[i]
-            vetor[i] = vetor[menor]
-            vetor[menor] = aux
-        cont += 1
+        aux = vetor[i]
+        vetor[i] = vetor[menor]
+        vetor[menor] = aux
     fim = time.time()
     print("Selection Sort concluido")
+    listar_vetor_primeiros(vetor)
     return int(fim - inicio)
 
 
@@ -112,6 +117,7 @@ def inserction_sort(vetor):
 
     fim = time.time()
     print("Inserction Sort concluido")
+    listar_vetor_primeiros(vetor)
     return int(fim - inicio)
 
 
@@ -119,8 +125,9 @@ def shell_sort(vetor):
     inicio = time.time()
     i = len(vetor)//2
     while i != 0:
-        chave = True
-        while chave:
+        chave = False
+        while not chave:
+            chave = True
             for k in range(len(vetor)-i):
                 if(vetor[k] > vetor[k+i]):
                     aux = vetor[k]
@@ -131,6 +138,7 @@ def shell_sort(vetor):
 
     fim = time.time()
     print("Shell Sort concluido")
+    listar_vetor_primeiros(vetor)
     return int(fim - inicio)
 
 
@@ -139,8 +147,7 @@ def buble_sort(vetor):
     flag = True
     while flag:
         flag = False
-        index = 0
-        while index < len(vetor)-1:
+        for index in range(len(vetor)-1):
             if(vetor[index] > vetor[index+1]):
                 aux = vetor[index+1]
                 vetor[index+1] = vetor[index]
@@ -149,11 +156,11 @@ def buble_sort(vetor):
             index += 1
     fim = time.time()
     print("Buble sort concluido")
+    listar_vetor_primeiros(vetor)
     return int(fim - inicio)
 
 
 def quick_sort(vetor, inicio, fim):
-    init = time.time()
     i = inicio
     j = fim
     meio = vetor[(inicio+fim)//2]
@@ -165,21 +172,19 @@ def quick_sort(vetor, inicio, fim):
 
         if(i <= j):
             aux = vetor[i]
-            vetor[i] = vet[j]
-            vet[j] = aux
+            vetor[i] = vetor[j]
+            vetor[j] = aux
             i += 1
             j -= 1
     if inicio < j:
         quick_sort(vetor, inicio, j)
     if i < fim:
         quick_sort(vetor, i, fim)
-    end = time.time()
 
     print("Quik sort concluido")
     return int(end - init)
 
 
-#######################################################################################
 """ MAIN """
 vet = criar_vetor()
 sair = False
@@ -202,7 +207,7 @@ while not sair:
         print("vetor criado")
         os.system("pause")
     elif opcao == 2:
-        #criando as cópias e deixando para o Quick Sort ordenar o vetor
+        # criando as cópias e deixando para o Quick Sort ordenar o vetor
         aux1 = vet.copy()
         aux2 = vet.copy()
         aux3 = vet.copy()
@@ -211,8 +216,13 @@ while not sair:
         aux2 = inserction_sort(aux2)
         aux3 = shell_sort(aux3)
         aux4 = buble_sort(aux4)
-        aux5 = quick_sort(vet, 0, len(vet)-1)
-        tempos = [round, aux1, aux2, aux3, aux4, aux5]
+
+        init = time.time()
+        quick_sort(vet, 0, len(vet)-1)
+        end = time.time()
+        print("Quik sort concluido")
+        listar_vetor_primeiros(vet)
+        tempos = [round, aux1, aux2, aux3, aux4, (end-init)]
         rodadas.append(tempos)
         print("Ordenações feitas com sucesso!")
         round += 1

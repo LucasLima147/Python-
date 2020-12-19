@@ -11,15 +11,15 @@ texto += "Esses profissionais precisam se especializar em Programação, Estatí
 texto += "E claro Big Data."
 
 #se um arquivo for aberto em modo escrita e não existir, o Python irá crialo
-'''arq1 = open(os.path.join('arqs/cientista.txt'), 'w')
+arq1 = open(os.path.join('arqs/cientista.txt'), 'w')
 for word in texto.split():
     arq1.write(word + " ")
 arq1.close()
 arq1 = open("arqs/cientista.txt", 'r')
 print(arq1.read())
-print("\n\n")'''
+print("\n\n")
 #############################################################################
-'''     TRABALHANDO COM ARQUIVOS CSV        
+'''     TRABALHANDO COM ARQUIVOS CSV      '''  
 import csv                                                      # importando o pacote csv     
 
 # escrevendo dados no arquivo
@@ -41,7 +41,7 @@ with open('arqs/numeros.csv', 'r') as arquivo:
     leitor = csv.reader(arquivo)
     dados = list(leitor)                                        # convertendo os dados em uma lista
 for row in dados[1:]:                                           # percorrendo os dados a partir da primeira linha
-    print(row)                                                  # imprimindo cada linhda'''
+    print(row)                                                  # imprimindo cada linhda
 
 #############################################################################
 '''     TRABALHANDO COM ARQUIVOS JSON       '''

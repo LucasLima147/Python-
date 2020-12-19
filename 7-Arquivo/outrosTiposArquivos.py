@@ -1,4 +1,4 @@
-'''f = open("arqs/salarios.csv", "r")          # abrindo arquivo .csv
+f = open("arqs/salarios.csv", "r")          # abrindo arquivo .csv
 data = f.read()                             # lendo e salvando o conteúdo do arquivo na variável
 rows = data.split("\n")                     # transformando cada linha em uma lista
 full_data = []                              
@@ -10,7 +10,7 @@ first_row = full_data[0]                    # salvando a primeira coluna na vari
 print(len(full_data), len(first_row))       # mostando a quantidade de linhas e colunas'''
 
 #################################################################################
-'''     MANIPULANDO DADOS COM O PANDAS      
+     MANIPULANDO DADOS COM O PANDAS      
 # pandas é um dos mais usados para manipular diversos tipos de arquivos
 import pandas as pd                         # importando o pacote pandas
 
@@ -19,7 +19,7 @@ df = pd.read_csv(file_name)                 # abrindo o arquivo em leitura para 
 print(df.head())                            # mostrando o arquivo .cvs formatado com Pandas
 file2 = "arqs/salarios.csv"
 df2 = pd.read_csv(file2)
-print(df2.head())'''
+print(df2.head())
 
 #################################################################################
 '''     MANIPULANDO DADOS COM JSON      '''
