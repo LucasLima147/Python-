@@ -1,0 +1,11 @@
+A Programação Orientada a Objeto (POO) é uma representação mais próxida da realidade na Programação
+
+Alguns conceitos importantes:
+    Class: Abstrações computacionais que reprentam entidades do mundo real, ou seja, um objeto;
+    Objeto: Uma instância de uma classe, que possuí atribuitos e métodos da classe;
+    Atribuitos: Características da classe que ajudam a identificar o obejto;
+    Métodos: Ações do objeto (funções);
+    Mensagem: Chamada do objeto para invocar um de seus métodos;
+    Herança: quando uma classe é uma subclasse que herda os métodos/atributos da classe mãe, além de ter os próprios métodos e atributos;
+    Polimorfismo: Quando as classes derivadas de uma classe base, possuem os mesmos métodos/atributos (nome igual), mas cada um com sua própria finalidade/ação;
+    Encapsulamento: Técnica onde os atributos e métodos da classe permanecem oculto ao objeto (forma de segurança).
