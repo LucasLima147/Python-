@@ -34,18 +34,18 @@ values = ["DEFAULT, '12345678911', 'joão pedro', '2019-03-05', 'R teste BD', 'p
 "DEFAULT, '12345678956', 'karem rodrigues', '2019-03-05', 'R teste BD', 'python', 'ND'"]
 tabela = 'alunos'
 crud.insert(values, tabela, cursor, conn)
-print(crud.select("*", 'alunos',cursor))
+print(crud.select("*", 'alunos', cursor))
 
 #############################################
 
 #ATUALIZANDO dados do BD 
 
 #sequencia: tabela, sets, cursor, conexao, where(se existir)
-crud.update("alunos", {"nome":"Deidata Naruto", "cidade":"Aldeia da Folha"}, cursor, conn, "id_aluno = 2")
+crud.update("alunos", {"nome": "Deidata Naruto", "cidade": "Aldeia da Folha"}, cursor, conn, "id_aluno = 2")
 print(crud.select("*", 'alunos', cursor, "id_aluno = 2"))
 ############################################
 
 #APAGANDO dados do BD
 #sequencia: tabela, where, cursor, conexao
 crud.delete("alunos", "cidade = 'Conceição do Ouros'", cursor, conn)
-print(crud.select("*", 'alunos', cursor,))
+print(crud.select("*", 'alunos', cursor, ))
