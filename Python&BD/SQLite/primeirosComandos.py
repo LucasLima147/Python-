@@ -57,3 +57,4 @@ for linha in dados:
 
 # SEMPRE feche a conexão
 conexao.close()
+
