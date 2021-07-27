@@ -3,6 +3,7 @@ import os, random, time, datetime
 import sqlite3
 
 from setuptools.command.install import install
+from setuptools.command.upload_docs import upload_docs
 
 os.remove("dsh.db") if os.path.exists("dsh.db") else None
 
@@ -50,6 +51,25 @@ def select(query = "", columns = "*"):
         print("Leitura feita com sucesso!\n ")
 
 # Atualiza dados
+def update(coluna, valor, condicao):
+    query = "UPDATE produtos SET {0} = {1} WHERE {2}".format(coluna, valor, condicao)
+    try:
+        cur.execute(query)
+        conn.commit()
+    except:
+        print("Erro na atualização de dado(s)")
+    else:
+        print("Atualização feita com sucesso!\n ")
+
+# deleta dados
+def delete(condicao):
+    try:
+        cur.execute("DELETE FROM produtos WHERE "+ condicao)
+        conn.commit()
+    except:
+        print("Erro ao apagar dado(s)")
+    else:
+        print("apagado(s) com sucesso!\n ")
 
 
 # =======================
@@ -63,6 +83,13 @@ select("")
 select("WHERE valor > 65.0")
 select("", "valor")
 
+#Atualizando dados no BD
+update("valor", 70.00, "valor < 57.0")
+select("")   # --> para verificar a alteração no prompt
+
+# exclusão de registros
+delete(" valor > 68")
+select("")   # --> para verificar a alteração no prompt
 
 cur.close()
 conn.close()
