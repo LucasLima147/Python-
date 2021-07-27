@@ -1,5 +1,5 @@
 """IMPORTS"""
-import os, random, time, datetime
+import os, random, datetime
 import sqlite3
 
 from setuptools.command.install import install
